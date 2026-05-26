@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>המתוקים של טולי | הזמנות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink-50: #fdf2f4;
+    --pink-100: #fce7ec;
+    --pink-200: #f9d5de;
+    --pink-300: #f4b5c4;
+    --pink-400: #ec89a2;
+    --pink-500: #e0627f;
+    --pink-600: #c94663;
+    --pink-700: #a83651;
+    --cream: #fffaf5;
+    --warm-white: #fefcf9;
+    --charcoal: #2a1f25;
+    --gold: #c9a876;
+    --gold-light: #e8d4a8;
+    --shadow-sm: 0 2px 8px rgba(201, 70, 99, 0.08);
+    --shadow-md: 0 8px 24px rgba(201, 70, 99, 0.12);
+    --shadow-lg: 0 20px 48px rgba(201, 70, 99, 0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Subtle background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(244, 181, 196, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(232, 212, 168, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--pink-200);
+    z-index: 100;
+    padding: 14px 24px;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-700);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-bow {
+    font-size: 1.3rem;
+  }
+
+  .cart-btn {
+    background: var(--pink-600);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cart-btn:hover {
+    background: var(--pink-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .cart-count {
+    background: white;
+    color: var(--pink-700);
+    border-radius: 999px;
+    min-width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0 6px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-decoration {
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .hero-decoration.top-right { top: 40px; right: 8%; transform: rotate(15deg); }
+  .hero-decoration.bottom-left { bottom: 20px; left: 8%; transform: rotate(-20deg); }
+
+  .hero-badge {
+    display: inline-block;
+    background: white;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 24px;
+    border-radius: 999px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: var(--pink-700);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--pink-500);
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    opacity: 0.75;
+    max-width: 600px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .hero-divider-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-divider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ===== PRODUCTS GRID ===== */
+  .products-section {
+    padding: 40px 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--pink-700);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--charcoal);
+    opacity: 0.65;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid var(--pink-100);
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--pink-200);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: var(--pink-50);
+    display: block;
+  }
+
+  .product-illustration {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .product-illustration svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .product-info {
+    padding: 20px 22px 22px;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-bottom: 16px;
+    min-height: 40px;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pink-600);
+  }
+
+  .product-price .unit {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    opacity: 0.5;
+    margin-right: 4px;
+  }
+
+  .add-btn {
+    background: var(--pink-100);
+    color: var(--pink-700);
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add-btn:hover {
+    background: var(--pink-600);
+    color: white;
+    transform: scale(1.1);
+  }
+
+  .quantity-control {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--pink-50);
+    border-radius: 999px;
+    padding: 4px;
+  }
+
+  .quantity-control.active {
+    display: flex;
+  }
+
+  .quantity-btn {
+    background: white;
+    border: 1px solid var(--pink-200);
+    color: var(--pink-700);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .quantity-btn:hover {
+    background: var(--pink-600);
+    color: white;
+    border-color: var(--pink-600);
+  }
+
+  .quantity-display {
+    font-weight: 700;
+    color: var(--pink-700);
+    min-width: 20px;
+    text-align: center;
+  }
+
+  /* ===== CART MODAL ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(42, 31, 37, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal {
+    background: var(--warm-white);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 32px;
+    position: relative;
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--pink-100);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--pink-700);
+    transition: all 0.2s ease;
+  }
+
+  .modal-close:hover {
+    background: var(--pink-600);
+    color: white;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--pink-700);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .modal-subtitle {
+    text-align: center;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+  }
+
+  .cart-items {
+    margin-bottom: 20px;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--pink-100);
+  }
+
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+
+  .cart-item-info h4 {
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 2px;
+  }
+
+  .cart-item-info span {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+  }
+
+  .cart-item-price {
+    font-weight: 700;
+    color: var(--pink-600);
+  }
+
+  .cart-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--charcoal);
+    opacity: 0.5;
+  }
+
+  .cart-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+
+  .cart-total {
+    background: var(--pink-50);
+    padding: 16px 20px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .cart-total-label {
+    color: var(--charcoal);
+  }
+
+  .cart-total-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--pink-700);
+  }
+
+  /* ===== FORM ===== */
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--pink-200);
+    border-radius: 12px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.95rem;
+    background: white;
+    color: var(--charcoal);
+    transition: all 0.2s ease;
+    direction: rtl;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--pink-500);
+    box-shadow: 0 0 0 3px var(--pink-100);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  }
+
+  .whatsapp-btn:hover {
+    background: #1fa851;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  .whatsapp-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .whatsapp-icon {
+    width: 22px;
+    height: 22px;
+    fill: white;
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .floating-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background: #25D366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    z-index: 50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .floating-whatsapp:hover {
+    transform: scale(1.1);
+  }
+
+  .floating-whatsapp svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--pink-700);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  footer .logo {
+    color: white;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+  }
+
+  .footer-text {
+    opacity: 0.85;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .footer-contact a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+    font-weight: 500;
+  }
+
+  .footer-contact a:hover {
+    opacity: 1;
+  }
+
+  .footer-copyright {
+    opacity: 0.6;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%) translateY(100px);
+    background: var(--charcoal);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    z-index: 300;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    font-size: 0.95rem;
+  }
+
+  .toast.active {
+    opacity: 1;
+    transform: translateX(50%) translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 50px 20px 40px; }
+    .hero-decoration { font-size: 3rem; }
+    .products-section { padding: 20px 16px 60px; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .product-image { height: 160px; }
+    .product-info { padding: 14px 14px 16px; }
+    .product-name { font-size: 1.05rem; }
+    .product-description { font-size: 0.8rem; min-height: 36px; }
+    .product-price { font-size: 1.1rem; }
+    .add-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+    .quantity-btn { width: 28px; height: 28px; font-size: 1rem; }
+    .modal { padding: 24px 20px; }
+    .section-title { font-size: 1.8rem; }
+    .cart-btn { padding: 8px 14px; font-size: 0.85rem; }
+    .floating-whatsapp { width: 52px; height: 52px; bottom: 18px; left: 18px; }
+    .floating-whatsapp svg { width: 26px; height: 26px; }
+    footer { margin-top: 40px; padding: 36px 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-bow">🎀</span>
+      <span>המתוקים של טולי</span>
+    </div>
+    <button class="cart-btn" onclick="openCart()">
+      <span>🛒 הסל שלי</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-decoration top-right">🍪</div>
+  <div class="hero-decoration bottom-left">🎀</div>
+
+  <div class="hero-badge">~ בחסדי ה׳ ~</div>
+  <h1>מתוקים <em>מהלב</em><br>ישר אליכם</h1>
+  <p class="hero-subtitle">
+    אופה לכם עוגיות, עוגות ומאפים טריים מכל הלב —
+    כל ביס הוא חגיגה של טעמים, ריחות ואהבה.
+  </p>
+
+  <div class="hero-divider">
+    <span class="hero-divider-line"></span>
+    <span class="hero-divider-dot"></span>
+    <span class="hero-divider-line"></span>
+  </div>
+</section>
+
+<section class="products-section">
+  <h2 class="section-title">התפריט שלנו</h2>
+  <p class="section-subtitle">הוסיפו את המוצרים לסל וסיימו את ההזמנה בוואטסאפ</p>
+
+  <div class="products-grid" id="productsGrid">
+    <!-- Products will be injected here -->
+  </div>
+</section>
+
+<!-- Cart Modal -->
+<div class="modal-overlay" id="cartModal" onclick="if(event.target === this) closeCart()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCart()">✕</button>
+    <h3 class="modal-title">ההזמנה שלך</h3>
+    <p class="modal-subtitle">עוד רגע זה מגיע אליך 🎀</p>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-total" id="cartTotal" style="display: none;">
+      <span class="cart-total-label">סה״כ לתשלום</span>
+      <span class="cart-total-price" id="cartTotalPrice">₪0</span>
+    </div>
+
+    <form class="order-form" id="orderForm" onsubmit="return false;">
+      <div class="form-group">
+        <label for="customerName">שם מלא</label>
+        <input type="text" id="customerName" placeholder="שם פרטי ומשפחה" required>
+      </div>
+      <div class="form-group">
+        <label for="customerPhone">טלפון</label>
+        <input type="tel" id="customerPhone" placeholder="050-0000000" required>
+      </div>
+      <div class="form-group">
+        <label for="customerNotes">הערות להזמנה (לא חובה)</label>
+        <textarea id="customerNotes" placeholder="תאריך אספקה, אלרגיות, הערות מיוחדות..."></textarea>
+      </div>
+      <button type="button" class="whatsapp-btn" id="submitBtn" onclick="sendOrder()">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.5"/>
+        </svg>
+        <span>שלח הזמנה בוואטסאפ</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<a href="https://wa.me/972524769806" target="_blank" class="floating-whatsapp" aria-label="צור קשר בוואטסאפ">
+  <svg viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.5"/>
+  </svg>
+</a>
+
+<footer>
+  <div class="logo">
+    <span class="logo-bow">🎀</span>
+    <span>המתוקים של טולי</span>
+  </div>
+  <p class="footer-text">אוריטל רוימי · מאפיה ביתית</p>
+  <div class="footer-contact">
+    <a href="tel:0524769806">📞 052-4769806</a>
+    <a href="https://wa.me/972524769806" target="_blank">💬 וואטסאפ</a>
+  </div>
+  <p class="footer-copyright">© המתוקים של טולי · כל ההזמנות מוכנות באהבה 🎀</p>
+</footer>
+
+<div class="toast" id="toast">נוסף לסל ✓</div>
+
+<script>
+  // ===== PRODUCTS DATA =====
+  // type: 'cookies' = נמכר ב-10 יח׳ מינימום, כפולות של 10 | 'unit' = יחידה אחת
+  const products = [
+    {
+      id: 1,
+      name: 'עוגיות שוקולד צ׳יפס',
+      description: 'חמאתיות וטריות, עם שוקולד איכותי',
+      price: 20,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 2,
+      name: 'עוגיות רעידת אדמה',
+      description: 'פריכות מבחוץ, רכות מבפנים',
+      price: 45,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/890577/pexels-photo-890577.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 3,
+      name: 'עוגיות בראוניז',
+      description: 'שוקולד עשיר שנמס בפה',
+      price: 40,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 4,
+      name: 'אלפחורס',
+      description: 'עוגיות סנדוויץ׳ עם דולסה דה לצ׳ה',
+      price: 45,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 5,
+      name: 'סינבון',
+      description: 'רול קינמון אפוי טרי עם גלזורה',
+      price: 8,
+      type: 'unit',
+      unit: 'ליח׳',
+      image: 'https://images.pexels.com/photos/267308/pexels-photo-267308.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 6,
+      name: 'רוגלך שוקולד',
+      description: 'פרווה או חלבי — לבחירה',
+      price: 35,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 7,
+      name: 'שושנים קקאו',
+      description: 'עם סוכר וקינמון בציפוי זהוב',
+      price: 40,
+      type: 'cookies',
+      image: 'https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 8,
+      name: 'עוגת שוקולד',
+      description: 'עוגה עסיסית עם גנאש פרווה',
+      price: 40,
+      type: 'unit',
+      unit: 'לעוגה',
+      image: 'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 9,
+      name: 'עוגות שמרים',
+      description: 'שוקולד / קינמון / ריבת חלב',
+      price: 25,
+      type: 'unit',
+      unit: 'לעוגה',
+      image: 'https://images.pexels.com/photos/2067436/pexels-photo-2067436.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+  ];
+
+  // ===== SVG ILLUSTRATIONS - מעוצבות מקומית =====
+  const illustrations = {
+    'chocolate-chip': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-cc" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fdf2f4"/>
+          <stop offset="1" stop-color="#f9d5de"/>
+        </linearGradient>
+        <radialGradient id="cookie-cc" cx="0.4" cy="0.35" r="0.7">
+          <stop offset="0" stop-color="#e8b878"/>
+          <stop offset="0.7" stop-color="#c9935a"/>
+          <stop offset="1" stop-color="#9c6d3f"/>
+        </radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-cc)"/>
+      <circle cx="120" cy="200" r="65" fill="url(#cookie-cc)"/>
+      <circle cx="110" cy="190" r="6" fill="#3d2817"/><circle cx="140" cy="180" r="5" fill="#3d2817"/><circle cx="100" cy="215" r="5" fill="#3d2817"/><circle cx="135" cy="220" r="6" fill="#3d2817"/><circle cx="155" cy="205" r="4" fill="#3d2817"/><circle cx="90" cy="195" r="4" fill="#3d2817"/><circle cx="125" cy="235" r="4" fill="#3d2817"/>
+      <circle cx="250" cy="160" r="75" fill="url(#cookie-cc)"/>
+      <circle cx="240" cy="150" r="6" fill="#3d2817"/><circle cx="275" cy="145" r="5" fill="#3d2817"/><circle cx="225" cy="175" r="5" fill="#3d2817"/><circle cx="265" cy="180" r="6" fill="#3d2817"/><circle cx="290" cy="165" r="4" fill="#3d2817"/><circle cx="250" cy="195" r="5" fill="#3d2817"/><circle cx="215" cy="155" r="4" fill="#3d2817"/>
+      <circle cx="330" cy="220" r="55" fill="url(#cookie-cc)"/>
+      <circle cx="320" cy="215" r="5" fill="#3d2817"/><circle cx="345" cy="210" r="4" fill="#3d2817"/><circle cx="325" cy="240" r="5" fill="#3d2817"/><circle cx="355" cy="235" r="4" fill="#3d2817"/>
+    </svg>`,
+
+    'earthquake': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-eq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <radialGradient id="cookie-eq" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#5c3420"/><stop offset="1" stop-color="#2a1610"/></radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-eq)"/>
+      <circle cx="130" cy="190" r="70" fill="url(#cookie-eq)"/>
+      <path d="M 90 180 Q 110 170, 130 180 Q 150 195, 170 185" stroke="#faf3e8" stroke-width="3" fill="none" opacity="0.9"/>
+      <path d="M 100 210 Q 125 200, 155 215" stroke="#faf3e8" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <path d="M 115 160 Q 135 155, 160 165" stroke="#faf3e8" stroke-width="2" fill="none" opacity="0.8"/>
+      <circle cx="270" cy="160" r="80" fill="url(#cookie-eq)"/>
+      <path d="M 220 155 Q 250 145, 280 155 Q 305 165, 325 150" stroke="#faf3e8" stroke-width="3.5" fill="none" opacity="0.9"/>
+      <path d="M 235 185 Q 270 175, 310 195" stroke="#faf3e8" stroke-width="3" fill="none" opacity="0.85"/>
+      <path d="M 245 130 Q 275 125, 305 130" stroke="#faf3e8" stroke-width="2.5" fill="none" opacity="0.8"/>
+      <path d="M 225 210 Q 265 205, 300 215" stroke="#faf3e8" stroke-width="2" fill="none" opacity="0.75"/>
+      <circle cx="340" cy="230" r="55" fill="url(#cookie-eq)"/>
+      <path d="M 305 225 Q 335 220, 370 230" stroke="#faf3e8" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <path d="M 315 245 Q 345 240, 365 250" stroke="#faf3e8" stroke-width="2" fill="none" opacity="0.8"/>
+    </svg>`,
+
+    'brownie': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <linearGradient id="brownie-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d1f14"/><stop offset="1" stop-color="#1f0d08"/></linearGradient>
+        <linearGradient id="brownie-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2619"/><stop offset="1" stop-color="#2a140c"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-br)"/>
+      <g transform="translate(80, 140)">
+        <path d="M 0 50 L 40 25 L 130 25 L 90 50 Z" fill="url(#brownie-side)"/>
+        <path d="M 90 50 L 130 25 L 130 75 L 90 100 Z" fill="#1f0d08"/>
+        <rect x="0" y="50" width="90" height="50" fill="url(#brownie-side)"/>
+        <path d="M 0 50 L 40 25 L 130 25 L 90 50 Z" fill="url(#brownie-top)"/>
+        <circle cx="25" cy="42" r="3" fill="#0a0402"/><circle cx="55" cy="38" r="4" fill="#0a0402"/><circle cx="75" cy="44" r="3" fill="#0a0402"/>
+      </g>
+      <g transform="translate(220, 160)">
+        <path d="M 0 50 L 40 25 L 130 25 L 90 50 Z" fill="url(#brownie-side)"/>
+        <path d="M 90 50 L 130 25 L 130 75 L 90 100 Z" fill="#1f0d08"/>
+        <rect x="0" y="50" width="90" height="50" fill="url(#brownie-side)"/>
+        <path d="M 0 50 L 40 25 L 130 25 L 90 50 Z" fill="url(#brownie-top)"/>
+        <circle cx="30" cy="40" r="4" fill="#0a0402"/><circle cx="60" cy="44" r="3" fill="#0a0402"/><circle cx="80" cy="38" r="4" fill="#0a0402"/>
+        <path d="M 20 50 Q 50 45 90 50" stroke="#6b3820" stroke-width="1" fill="none" opacity="0.5"/>
+      </g>
+    </svg>`,
+
+    'alfajores': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-al" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-al)"/>
+      <g transform="translate(100, 170)">
+        <ellipse cx="0" cy="5" rx="60" ry="12" fill="#d4a77a"/>
+        <rect x="-60" y="-5" width="120" height="15" fill="#c99968"/>
+        <ellipse cx="0" cy="-5" rx="60" ry="12" fill="#f0e6d8"/>
+        <rect x="-60" y="-18" width="120" height="15" fill="#c78856" opacity="0.9"/>
+        <ellipse cx="0" cy="-18" rx="60" ry="12" fill="#e5b887"/>
+        <ellipse cx="0" cy="-22" rx="55" ry="8" fill="#fff9ed" opacity="0.8"/>
+        <circle cx="-30" cy="-22" r="2" fill="#fff" opacity="0.9"/><circle cx="15" cy="-24" r="1.5" fill="#fff" opacity="0.9"/><circle cx="35" cy="-20" r="2" fill="#fff" opacity="0.9"/>
+      </g>
+      <g transform="translate(260, 200)">
+        <ellipse cx="0" cy="5" rx="55" ry="11" fill="#d4a77a"/>
+        <rect x="-55" y="-5" width="110" height="15" fill="#c99968"/>
+        <ellipse cx="0" cy="-5" rx="55" ry="11" fill="#f0e6d8"/>
+        <rect x="-55" y="-17" width="110" height="13" fill="#c78856" opacity="0.9"/>
+        <ellipse cx="0" cy="-17" rx="55" ry="11" fill="#e5b887"/>
+        <ellipse cx="0" cy="-20" rx="50" ry="7" fill="#fff9ed" opacity="0.8"/>
+      </g>
+    </svg>`,
+
+    'cinnamon': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-ci" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <radialGradient id="roll" cx="0.4" cy="0.4" r="0.7"><stop offset="0" stop-color="#e8a76a"/><stop offset="1" stop-color="#a85c28"/></radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-ci)"/>
+      <g transform="translate(200, 160)">
+        <circle cx="0" cy="0" r="100" fill="url(#roll)"/>
+        <path d="M 0 0 m 0 -85 a 85 85 0 0 1 85 85" stroke="#5c2e10" stroke-width="3" fill="none" opacity="0.6"/>
+        <path d="M 0 0 m 0 -65 a 65 65 0 0 1 65 65" stroke="#5c2e10" stroke-width="3" fill="none" opacity="0.6"/>
+        <path d="M 0 0 m 0 -45 a 45 45 0 0 1 45 45" stroke="#5c2e10" stroke-width="2.5" fill="none" opacity="0.6"/>
+        <path d="M 0 0 m 0 -25 a 25 25 0 0 1 25 25" stroke="#5c2e10" stroke-width="2" fill="none" opacity="0.6"/>
+        <circle cx="0" cy="0" r="10" fill="#8b4513"/>
+        <path d="M -80 -40 Q -40 -60 0 -55 Q 40 -60 75 -35 Q 80 0 65 35 Q 30 55 -5 50 Q -40 55 -70 30 Q -85 -5 -80 -40 Z" fill="#fff9f0" opacity="0.7"/>
+        <ellipse cx="-30" cy="-45" rx="15" ry="5" fill="#fff" opacity="0.9"/>
+        <ellipse cx="35" cy="-30" rx="12" ry="4" fill="#fff" opacity="0.9"/>
+        <ellipse cx="-10" cy="40" rx="18" ry="5" fill="#fff" opacity="0.9"/>
+      </g>
+    </svg>`,
+
+    'rugelach': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-ru" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-ru)"/>
+      <g transform="translate(100, 170)">
+        <path d="M 0 0 Q 30 -40 70 -30 Q 80 -10 65 15 Q 30 30 0 0 Z" fill="#c99968"/>
+        <path d="M 5 -5 Q 30 -35 60 -25 Q 70 -10 55 10 Q 30 20 5 -5" fill="#4a2619" opacity="0.5"/>
+        <path d="M 10 0 Q 30 -25 55 -18 Q 60 -5 50 5" fill="#d4a77a"/>
+      </g>
+      <g transform="translate(220, 150)">
+        <path d="M 0 0 Q 35 -45 80 -32 Q 92 -8 75 18 Q 35 34 0 0 Z" fill="#c99968"/>
+        <path d="M 8 -5 Q 35 -38 70 -28 Q 80 -10 65 10 Q 35 22 8 -5" fill="#4a2619" opacity="0.5"/>
+        <path d="M 14 0 Q 35 -28 62 -20 Q 68 -5 55 5" fill="#d4a77a"/>
+      </g>
+      <g transform="translate(170, 220)">
+        <path d="M 0 0 Q 32 -42 72 -30 Q 82 -8 68 16 Q 32 32 0 0 Z" fill="#c99968"/>
+        <path d="M 7 -4 Q 32 -37 65 -26 Q 75 -10 60 10 Q 32 22 7 -4" fill="#4a2619" opacity="0.5"/>
+      </g>
+    </svg>`,
+
+    'rosettes': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-ro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <radialGradient id="rose" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#d4a77a"/><stop offset="1" stop-color="#8b4513"/></radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-ro)"/>
+      <g transform="translate(130, 170)">
+        <circle cx="0" cy="0" r="55" fill="url(#rose)"/>
+        <circle cx="0" cy="0" r="45" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="35" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="25" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="15" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <g opacity="0.6"><circle cx="-20" cy="-15" r="2" fill="#fff"/><circle cx="25" cy="-10" r="1.5" fill="#fff"/><circle cx="-10" cy="20" r="2" fill="#fff"/><circle cx="30" cy="15" r="1.5" fill="#fff"/><circle cx="0" cy="-25" r="1.5" fill="#fff"/></g>
+      </g>
+      <g transform="translate(270, 170)">
+        <circle cx="0" cy="0" r="60" fill="url(#rose)"/>
+        <circle cx="0" cy="0" r="50" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="40" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <circle cx="0" cy="0" r="16" fill="none" stroke="#5c2e10" stroke-width="2" opacity="0.5"/>
+        <g opacity="0.6"><circle cx="-25" cy="-18" r="2" fill="#fff"/><circle cx="28" cy="-12" r="1.5" fill="#fff"/><circle cx="-12" cy="25" r="2" fill="#fff"/><circle cx="32" cy="18" r="1.5" fill="#fff"/></g>
+      </g>
+    </svg>`,
+
+    'chocolate-cake': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-cc2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <linearGradient id="ganache" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1008"/><stop offset="1" stop-color="#4a1f10"/></linearGradient>
+        <linearGradient id="cake-layer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c3420"/><stop offset="1" stop-color="#3d2817"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-cc2)"/>
+      <g transform="translate(120, 90)">
+        <rect x="0" y="130" width="160" height="20" fill="#faf3e8"/>
+        <ellipse cx="80" cy="130" rx="80" ry="10" fill="#fff8ed"/>
+        <rect x="10" y="40" width="140" height="90" fill="url(#cake-layer)"/>
+        <rect x="10" y="80" width="140" height="4" fill="#d4a77a"/>
+        <rect x="10" y="110" width="140" height="4" fill="#d4a77a"/>
+        <path d="M 10 40 L 150 40 L 150 55 Q 130 42 115 50 Q 95 60 80 50 Q 65 42 50 48 Q 35 58 25 50 Q 15 42 10 48 Z" fill="url(#ganache)"/>
+        <ellipse cx="80" cy="40" rx="70" ry="8" fill="#1a0805"/>
+        <g fill="#fff" opacity="0.8"><circle cx="30" cy="38" r="1.5"/><circle cx="95" cy="36" r="1"/><circle cx="130" cy="40" r="1.5"/></g>
+        <path d="M 70 35 L 80 15 L 90 35 Z" fill="#e0627f"/>
+        <circle cx="80" cy="15" r="4" fill="#fff"/>
+      </g>
+    </svg>`,
+
+    'yeast-cake': `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-yc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf2f4"/><stop offset="1" stop-color="#f9d5de"/></linearGradient>
+        <linearGradient id="dough" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0d8a8"/><stop offset="1" stop-color="#c99968"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#bg-yc)"/>
+      <g transform="translate(100, 110)">
+        <rect x="0" y="100" width="200" height="18" fill="#c9a876" rx="4"/>
+        <ellipse cx="100" cy="100" rx="100" ry="8" fill="#e8d4a8"/>
+        <path d="M 0 100 Q 20 40 50 50 Q 80 25 100 40 Q 120 20 150 45 Q 180 35 200 100 Z" fill="url(#dough)"/>
+        <path d="M 10 95 Q 30 60 55 55 M 45 80 Q 70 50 90 60 M 80 65 Q 110 45 125 55 M 115 80 Q 145 55 165 65 M 150 70 Q 180 60 195 95" stroke="#8b4513" stroke-width="2" fill="none" opacity="0.4"/>
+        <circle cx="30" cy="70" r="3" fill="#3d2817" opacity="0.6"/><circle cx="65" cy="55" r="2.5" fill="#3d2817" opacity="0.6"/><circle cx="100" cy="50" r="3" fill="#3d2817" opacity="0.6"/><circle cx="135" cy="55" r="2.5" fill="#3d2817" opacity="0.6"/><circle cx="170" cy="70" r="3" fill="#3d2817" opacity="0.6"/>
+        <g fill="#fff" opacity="0.7"><ellipse cx="35" cy="50" rx="20" ry="3"/><ellipse cx="100" cy="35" rx="25" ry="3"/><ellipse cx="165" cy="50" rx="20" ry="3"/></g>
+      </g>
+    </svg>`,
+  };
+
+  const STEP = 10; // כפולות של 10 לעוגיות
+
+  const cart = {};
+
+  // ===== RENDER PRODUCTS =====
+  function renderProducts() {
+    const grid = document.getElementById('productsGrid');
+    grid.innerHTML = products.map(p => {
+      const priceLabel = p.type === 'cookies'
+        ? `<span class="unit">ל-10 יח׳</span>`
+        : `<span class="unit">${p.unit}</span>`;
+
+      // Render illustration (SVG) or real image with fallback
+      let imageHtml;
+      if (p.image.startsWith('illustration:')) {
+        const key = p.image.replace('illustration:', '');
+        imageHtml = `<div class="product-image product-illustration">${illustrations[key] || ''}</div>`;
+      } else {
+        imageHtml = `<img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="handleImageError(this, ${p.id})">`;
+      }
+
+      return `
+      <article class="product-card">
+        ${imageHtml}
+        <div class="product-info">
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-description">${p.description}</p>
+          <div class="product-footer">
+            <div class="product-price">₪${p.price}${priceLabel}</div>
+            <div id="control-${p.id}">
+              <button class="add-btn" onclick="addToCart(${p.id})" aria-label="הוסף לסל">+</button>
+              <div class="quantity-control" id="qc-${p.id}">
+                <button class="quantity-btn" onclick="updateQuantity(${p.id}, -1)" aria-label="הפחת">−</button>
+                <span class="quantity-display" id="qty-${p.id}">0</span>
+                <button class="quantity-btn" onclick="updateQuantity(${p.id}, 1)" aria-label="הוסף">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+    }).join('');
+  }
+
+  // Fallback when image fails to load - replace with SVG illustration
+  function handleImageError(imgElement, productId) {
+    const fallbackMap = {
+      1: 'chocolate-chip', 2: 'earthquake', 3: 'brownie', 4: 'alfajores',
+      5: 'cinnamon', 6: 'rugelach', 7: 'rosettes', 8: 'chocolate-cake', 9: 'yeast-cake'
+    };
+    const key = fallbackMap[productId] || 'chocolate-chip';
+    const div = document.createElement('div');
+    div.className = 'product-image product-illustration';
+    div.innerHTML = illustrations[key] || '';
+    imgElement.replaceWith(div);
+  }
+
+  // ===== CART LOGIC =====
+  // cart stores actual pieces (cookies) or units. For cookies we add/remove in steps of 10.
+  function getStep(id) {
+    const p = products.find(p => p.id === +id);
+    return p.type === 'cookies' ? STEP : 1;
+  }
+
+  function addToCart(id) {
+    const step = getStep(id);
+    cart[id] = (cart[id] || 0) + step;
+    updateCartUI(id);
+    const p = products.find(p => p.id === +id);
+    showToast(p.type === 'cookies' ? `נוספו 10 יח׳ לסל ✓` : 'נוסף לסל ✓');
+  }
+
+  function updateQuantity(id, delta) {
+    const step = getStep(id);
+    cart[id] = (cart[id] || 0) + (delta * step);
+    if (cart[id] <= 0) delete cart[id];
+    updateCartUI(id);
+  }
+
+  function updateCartUI(id) {
+    const qty = cart[id] || 0;
+    const qtyDisplay = document.getElementById(`qty-${id}`);
+    const qc = document.getElementById(`qc-${id}`);
+    const addBtn = document.querySelector(`#control-${id} .add-btn`);
+
+    if (qty > 0) {
+      qtyDisplay.textContent = qty;
+      qc.classList.add('active');
+      addBtn.style.display = 'none';
+    } else {
+      qc.classList.remove('active');
+      addBtn.style.display = 'flex';
+    }
+
+    // Update total cart count (show item-lines count, not total pieces)
+    const total = Object.keys(cart).length;
+    document.getElementById('cartCount').textContent = total;
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('active');
+    setTimeout(() => toast.classList.remove('active'), 1800);
+  }
+
+  // ===== CART MODAL =====
+  function openCart() {
+    renderCartItems();
+    document.getElementById('cartModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCart() {
+    document.getElementById('cartModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function renderCartItems() {
+    const itemsEl = document.getElementById('cartItems');
+    const totalEl = document.getElementById('cartTotal');
+    const totalPriceEl = document.getElementById('cartTotalPrice');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const items = Object.keys(cart).map(id => {
+      const product = products.find(p => p.id === +id);
+      return { ...product, quantity: cart[id] };
+    });
+
+    if (items.length === 0) {
+      itemsEl.innerHTML = `
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🍪</div>
+          <p>הסל שלך ריק</p>
+          <p style="font-size: 0.85rem; margin-top: 8px;">הוסיפו מוצרים מהתפריט</p>
+        </div>
+      `;
+      totalEl.style.display = 'none';
+      submitBtn.disabled = true;
+      return;
+    }
+
+    let total = 0;
+    itemsEl.innerHTML = items.map(item => {
+      // For cookies: price is per 10 pieces. For units: price is per 1 unit.
+      const subtotal = item.type === 'cookies'
+        ? (item.price * item.quantity) / STEP
+        : item.price * item.quantity;
+      total += subtotal;
+      const qtyLabel = item.type === 'cookies'
+        ? `${item.quantity} יח׳ · ₪${item.price} ל-10`
+        : `× ${item.quantity} · ₪${item.price} ${item.unit}`;
+      return `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <span>${qtyLabel}</span>
+          </div>
+          <div class="cart-item-price">₪${subtotal}</div>
+        </div>
+      `;
+    }).join('');
+
+    totalEl.style.display = 'flex';
+    totalPriceEl.textContent = `₪${total}`;
+    submitBtn.disabled = false;
+  }
+
+  // ===== SEND ORDER VIA WHATSAPP =====
+  function sendOrder() {
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const notes = document.getElementById('customerNotes').value.trim();
+
+    if (Object.keys(cart).length === 0) {
+      showToast('הסל ריק — הוסיפו מוצרים');
+      return;
+    }
+    if (!name) {
+      showToast('נא למלא שם מלא');
+      document.getElementById('customerName').focus();
+      return;
+    }
+    if (!phone) {
+      showToast('נא למלא מספר טלפון');
+      document.getElementById('customerPhone').focus();
+      return;
+    }
+
+    let msg = `🎀 *הזמנה חדשה מהאתר* 🎀\n\n`;
+    msg += `*שם:* ${name}\n`;
+    msg += `*טלפון:* ${phone}\n\n`;
+    msg += `*הזמנה:*\n`;
+
+    let total = 0;
+    Object.keys(cart).forEach(id => {
+      const p = products.find(p => p.id === +id);
+      const qty = cart[id];
+      const subtotal = p.type === 'cookies' ? (p.price * qty) / STEP : p.price * qty;
+      total += subtotal;
+      const line = p.type === 'cookies'
+        ? `• ${p.name} — ${qty} יח׳ = ₪${subtotal}`
+        : `• ${p.name} × ${qty} = ₪${subtotal}`;
+      msg += `${line}\n`;
+    });
+
+    msg += `\n*סה״כ:* ₪${total}`;
+    if (notes) msg += `\n\n*הערות:*\n${notes}`;
+
+    const whatsappUrl = `https://wa.me/972524769806?text=${encodeURIComponent(msg)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+
+  // ===== INIT =====
+  renderProducts();
+</script>
+
+</body>
+</html>
